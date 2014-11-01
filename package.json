@@ -1,0 +1,27 @@
+{
+  "name": "box-sums",
+  "version": "0.1.0",
+  "description": "An app for using numbers on Box",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mattbasta/box-sums"
+  },
+  "keywords": [
+    "boards",
+    "kanban",
+    "box"
+  ],
+  "author": "Matt Basta <basta@box.com>",
+  "license": "ISC",
+  "dependencies": {
+    "express": "4.5.*",
+    "request": "2.37.*",
+    "socket.io": "1.0.*",
+    "superagent": "0.18.*",
+    "promise": "^5.0.0"
+  }
+}

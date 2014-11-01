@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Box Sums</title>
+  <link rel="stylesheet" href="/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="/css/websheets.css">
+  <meta name="auth-id" content="AUTH">
+  <meta name="box-sums" content="SUM_ID">
+</head>
+<body>
+  <header>
+    <h1>Box Sums</h1>
+    <button class="get-share-link">Share</button>
+  </header>
+
+  <main>
+    <nav>
+      <button class="new">New Column</button>
+      <button class="edit">Edit Board</button>
+    </nav>
+    <menu class="new-menu">
+      <a href="#" class="toggle"><i class="fa fa-plus"></i></a>
+      <a href="#" class="new-menu-item new-spreadsheet"><i class="fa fa-table"></i></a>
+      <a href="#" class="new-menu-item new-heading"><i class="fa fa-header"></i></a>
+      <a href="#" class="new-menu-item new-paragraph"><i class="fa fa-paragraph"></i></a>
+      <a href="#" class="new-menu-item new-chart"><i class="fa fa-bar-chart"></i></a>
+    </menu>
+    <section class="sheet"></section>
+  </main>
+
+
+  <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/js/amd.js"></script>
+  <script src="/js/comm.js"></script>
+  <script src="/js/escape.js"></script>
+  <script src="/js/events.js"></script>
+  <script src="/js/eventtarget.js"></script>
+  <script src="/js/main.js"></script>
+  <script src="/js/new-item-menu.js"></script>
+  <script src="/js/renderer.js"></script>
+  <script src="/js/renderer.heading.js"></script>
+  <script src="/js/renderer.spreadsheet.js"></script>
+  <script src="/js/vendor/websheets.js"></script>
+  <script>require('main');</script>
+</body>
+</html>

@@ -1,0 +1,181 @@
+@import url(//fonts.googleapis.com/css?family=Lato);
+
+/* YUI 3.5.0 reset.css (http://developer.yahoo.com/yui/3/cssreset/) - http://cssreset.com */
+html{color:#000;background:#FFF}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0}table{border-collapse:collapse;border-spacing:0}fieldset,img{border:0}address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal}ol,ul{list-style:none}caption,th{text-align:left}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}q:before,q:after{content:''}abbr,acronym{border:0;font-variant:normal}sup{vertical-align:text-top}sub{vertical-align:text-bottom}input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit}input,textarea,select{*font-size:100%}legend{color:#000}#yui3-css-stamp.cssreset{display:none}
+
+*, *:before, *:after {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+}
+
+body {
+    background-size: cover;
+    background-position: center, center;
+    font-family: Lato, sans-serif;
+    padding-top: 50px;
+}
+
+header {
+    background: rgba(0, 0, 0, 0.7);
+    height: 50px;
+    left: 0;
+    line-height: 50px;
+    padding: 0 10px;
+    position: fixed;
+    right: 0;
+    text-align: right;
+    top: 0;
+}
+
+header input,
+header h1 {
+    background: transparent;
+    border: 0;
+    bottom: 0;
+    color: #fff;
+    display: inline;
+    left: 10px;
+    position: absolute;
+    top: 0;
+    vertical-align: middle;
+}
+
+nav {
+    padding: 10px;
+    text-align: left;
+}
+
+button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    background: transparent;
+    border: 0;
+    border-radius: 2px;
+    color: #263238;
+    font-size: 12px;
+    padding: 5px 10px;
+    text-transform: uppercase;
+    transition: background-color 0.3s, color 0.2s;
+}
+button:hover {
+    background-color: #455a64;
+    color: #fff;
+}
+button:active {
+    background-color: #37474f;
+    color: #fff;
+}
+
+.get-share-link {
+    color: #fff;
+}
+.get-share-link:hover {
+    background-color: #4dd0e1;
+    color: #006064;
+}
+.get-share-link:active {
+    background-color: #80deea;
+    color: #006064;
+}
+
+html, body, main {
+    background: #ddd;
+}
+
+main {
+    text-align: center;
+}
+
+.new-menu {
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    right: 15px;
+}
+.new-menu .toggle,
+.new-menu .new-menu-item {
+    background: linear-gradient(0, #D32323, #D63737);
+    border-radius: 60px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+    display: block;
+    height: 50px;
+    line-height: 30px;
+    margin-bottom: 10px;
+    transition: opacity 0.15s, transform 0.15s;
+    width: 50px;
+}
+.new-menu i {
+    color: white;
+    font-size: 30px;
+    margin: 10px;
+}
+
+.new-menu .toggle i {
+    margin: 11px 10px 9px;
+    transform: translate(0, 0) rotate(0) scale(1);
+    transition: transform 0.15s, margin 0.25s;
+}
+.new-menu.toggled .toggle i {
+    transform: translate(-1px, -2px) rotate(135deg) scale(0.8);
+    transition: transform 0.25s;
+}
+.new-menu:not(.toggled) > .new-menu-item {
+    opacity: 0;
+    transform: scale(0.8);
+}
+.new-menu.toggled > .new-menu-item {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.new-menu.toggled > .toggle + * {
+    transition-delay: 0.03s;
+}
+.new-menu.toggled > .toggle + * + * {
+    transition-delay: 0.06s;
+}
+.new-menu.toggled > .toggle + * + * + * {
+    transition-delay: 0.09s;
+}
+.new-menu.toggled > .toggle + * + * + * + * {
+    transition-delay: 0.12s;
+}
+
+.sheet {
+    background: #fff;
+    border: 1px solid #aaa;
+    border-bottom-width: 2px;
+    border-radius: 3px;
+    display: inline-block;
+    margin: auto;
+    min-width: 8.5in;
+    padding: 0.25in;
+    text-align: left;
+}
+
+.sheet .element-wrapper {
+    margin-bottom: 15px;
+}
+
+.element-wrapper h1 {
+    font-size: 2em;
+}
+
+.element-wrapper h2 {
+    font-size: 1.7em;
+}
+
+.element-wrapper h3 {
+    font-size: 1.5em;
+}
+
+.element-wrapper .websheet {
+    margin-left: auto;
+    margin-right: auto;
+}
