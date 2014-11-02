@@ -1,6 +1,6 @@
 define('renderer',
-    ['renderer.heading', 'renderer.spreadsheet'],
-    function(Rheading, Rspreadsheet) {
+    ['comm', 'renderer.heading', 'renderer.spreadsheet'],
+    function(comm, Rheading, Rspreadsheet) {
 
     var viewport = document.querySelector('.sheet');
 
@@ -18,14 +18,24 @@ define('renderer',
         return wrap;
     }
 
-    return {
-        create: function(name, params) {
-            return types[name].create(params);
+    var exported = {
+        createAndAdd: function(name, params) {
+            viewport.appendChild(getWrapper(types[name].create(params)));
         },
         renderEach: function(contents) {
             contents.forEach(function(elem) {
-                viewport.appendChild(getWrapper(this.create(elem.type, elem)));
+                this.createAndAdd(elem.type, elem);
             }, this);
+            // To support cross-sheet dependencies
+            for (var type in types) {
+                if (types[type].refresh) types[type].refresh();
+            }
         }
     };
+
+    comm.on('element.new', function(event) {
+        exported.createAndAdd(event.type);
+    });
+
+    return exported;
 });

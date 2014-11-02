@@ -4,8 +4,9 @@ define('renderer.heading', [], function() {
 
     return {
         create: function(item) {
-            var elem = document.createElement(SIZES[item.size - 1] || SIZES[0]);
-            elem.innerText = item.value;
+            item = item || {};
+            var elem = document.createElement(item.size ? SIZES[item.size - 1] || SIZES[0] : SIZES[0]);
+            elem.innerText = item.value || 'New Heading';
             return elem;
         },
     };

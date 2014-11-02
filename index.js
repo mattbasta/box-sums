@@ -121,6 +121,9 @@ io.on('connection', function(socket) {
             data.contents.splice(event.index, 1);
             broadcast('sheet.delete', {index: event.index});
         });
+        socket.on('element.reorder', function(event) {
+            broadcast('sheet.', null);
+        });
         socket.on('element.update', function(event) {
             broadcast('sheet.', null);
         });

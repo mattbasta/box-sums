@@ -110,6 +110,12 @@ main {
     transition: opacity 0.15s, transform 0.15s;
     width: 50px;
 }
+.new-menu .toggle:hover,
+.new-menu .new-menu-item:hover {
+    background: linear-gradient(0, #D32323, #E64747);
+}
+
+
 .new-menu i {
     color: white;
     font-size: 30px;
