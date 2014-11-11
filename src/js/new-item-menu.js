@@ -1,4 +1,4 @@
-define('new-item-menu', ['events', 'renderer'], function(events, renderer) {
+define('new-item-menu', ['comm', 'events', 'renderer'], function(comm, events, renderer) {
 
     var menu = document.querySelector('.new-menu');
 
@@ -7,11 +7,11 @@ define('new-item-menu', ['events', 'renderer'], function(events, renderer) {
     });
 
     events.listen(menu.querySelector('.new-spreadsheet'), 'click', function(e) {
-        renderer.createAndAdd('sheet');
+        comm.emit('element.new', {type: 'sheet'});
     });
 
     events.listen(menu.querySelector('.new-heading'), 'click', function(e) {
-        renderer.createAndAdd('heading');
+        comm.emit('element.new', {type: 'heading'});
     });
 
 });

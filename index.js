@@ -15,6 +15,7 @@ function getSheet(id, auth, cb) {
 
     function createSheet() {
         return sheets[id] = {
+            itemCount: 1,
             contents: [
                 {
                     type: 'heading',
@@ -113,20 +114,48 @@ io.on('connection', function(socket) {
         });
     });
 
+    function getDefault(type) {
+        switch (type) {
+            case 'sheet':
+                return {
+                    type: 'sheet',
+                    name: 'Sheet' + data.itemCount,
+                    data: new Array(5),
+                };
+            case 'heading':
+                return {
+                    type: 'heading',
+                    size: 1,
+                    value: 'Heading',
+                };
+        }
+    }
+
     function init() {
         socket.on('element.new', function(event) {
-            broadcast('element.new', null);
+            data.itemCount++;
+            var value = getDefault(event.type);
+            data.contents.push(value);
+            broadcast('element.new', value);
         });
         socket.on('element.delete', function(event) {
             data.contents.splice(event.index, 1);
-            broadcast('sheet.delete', {index: event.index});
+            broadcast('element.delete', {index: event.index});
         });
         socket.on('element.reorder', function(event) {
             broadcast('sheet.', null);
         });
         socket.on('element.update', function(event) {
-            broadcast('sheet.', null);
+            switch (event.type) {
+                case 'sheet':
+                    data.contents.forEach(function(elem) {
+                        if (elem.type !== 'sheet') return;
+                        elem.body[event.position.row][event.position.col] = event.value;
+                    });
+            }
+            broadcast('element.update', event);
         });
+
         socket.on('sheet.importData', function(event) {
             broadcast('sheet.', null);
         });

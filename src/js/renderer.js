@@ -34,7 +34,7 @@ define('renderer',
     };
 
     comm.on('element.new', function(event) {
-        exported.createAndAdd(event.type);
+        exported.createAndAdd(event.type, event);
     });
 
     return exported;

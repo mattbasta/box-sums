@@ -8,7 +8,7 @@ define('comm', [], function() {
 
     return {
         on: socket.on.bind(socket),
-        emit: socket.emit.bind(socket)
+        emit: socket.emit.bind(socket),
     };
 
 });
