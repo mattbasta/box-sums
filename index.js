@@ -19,6 +19,7 @@ function getSheet(id, auth, cb) {
             contents: [
                 {
                     type: 'heading',
+                    name: 'Heading0',
                     size: 1,
                     value: 'Spreadsheet'
                 },
@@ -125,6 +126,7 @@ io.on('connection', function(socket) {
             case 'heading':
                 return {
                     type: 'heading',
+                    name: 'Heading' + data.itemCount,
                     size: 1,
                     value: 'Heading',
                 };
@@ -150,8 +152,17 @@ io.on('connection', function(socket) {
                 case 'sheet':
                     data.contents.forEach(function(elem) {
                         if (elem.type !== 'sheet') return;
+                        if (elem.name !== event.sheet) return;
                         elem.body[event.position.row][event.position.col] = event.value;
                     });
+                    break;
+                case 'heading':
+                    data.contents.forEach(function(elem) {
+                        if (elem.type !== 'heading') return;
+                        if (elem.name !== event.name) return;
+                        elem.value = event.value;
+                    });
+                    break;
             }
             broadcast('element.update', event);
         });

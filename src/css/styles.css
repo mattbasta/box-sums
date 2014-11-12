@@ -100,7 +100,7 @@ main {
 }
 .new-menu .toggle,
 .new-menu .new-menu-item {
-    background: linear-gradient(0, #D32323, #D63737);
+    background: linear-gradient(0deg, #D32323, #D63737);
     border-radius: 60px;
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
     display: block;
@@ -112,7 +112,7 @@ main {
 }
 .new-menu .toggle:hover,
 .new-menu .new-menu-item:hover {
-    background: linear-gradient(0, #D32323, #E64747);
+    background: linear-gradient(0deg, #D32323, #E64747);
 }
 
 
@@ -184,4 +184,8 @@ main {
 .element-wrapper .websheet {
     margin-left: auto;
     margin-right: auto;
+}
+
+.edit-in-place {
+    position: absolute;
 }
